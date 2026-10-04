@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>QC Interactions</title></head>
+<body style="background:#0B0F19;color:#fff;font-family:monospace;padding:20px">
+<h1>AAVINYA QC — interaction harness</h1>
+<pre id="out">running…</pre>
+<iframe id="f" src="index.html" style="width:1280px;height:800px;border:1px solid #2BB8D8"></iframe>
+<script>
+const log=[];
+function P(m){log.push(m);document.getElementById('out').textContent=log.join('\n');console.log('QC: '+m);}
+const f=document.getElementById('f');
+f.addEventListener('load',function(){
+  const w=f.contentWindow,d=f.contentDocument;
+  setTimeout(function(){
+    // kill intro
+    const s=d.getElementById('intro-screen'); if(s){s.remove();} d.body.classList.remove('is-locked');
+
+    // 1. login modal
+    d.querySelector('.nav-login').click();
+    setTimeout(function(){
+      const m=d.getElementById('login-modal');
+      P('login modal open: '+(!m.hidden));
+      // tab switch
+      d.querySelectorAll('#login-modal .tab')[1].click();
+      P('role after tab switch: '+d.getElementById('login-role').value);
+      // invalid submit
+      d.getElementById('login-form').dispatchEvent(new w.Event('submit',{cancelable:true,bubbles:true}));
+      setTimeout(function(){
+        P('login email error: "'+d.getElementById('err-lg-email').textContent+'"');
+        P('login pass error: "'+d.getElementById('err-lg-pass').textContent+'"');
+        // valid submit
+        d.getElementById('lg-email').value='test@jdcoem.ac.in';
+        d.getElementById('lg-pass').value='secret123';
+        d.getElementById('login-form').dispatchEvent(new w.Event('submit',{cancelable:true,bubbles:true}));
+        setTimeout(function(){
+          P('toasts after valid login: '+d.querySelectorAll('#toast-stack .toast').length);
+          // 2. committee filter
+          w.location.hash='#forum';
+          setTimeout(function(){
+            const fb=Array.from(d.querySelectorAll('#committee-filters .filter-btn'));
+            const tech=fb.find(b=>b.dataset.filter==='technical'); tech.click();
+            setTimeout(function(){
+              const cards=d.querySelectorAll('#committee-grid .committee-card');
+              P('after TECHNICAL filter, cards='+cards.length+' name='+(cards[0]?cards[0].querySelector('h3').textContent:'none'));
+              P('  head='+cards[0].querySelector('.cc-head-info strong').textContent
+                +' coheads='+Array.from(cards[0].querySelectorAll('.cc-cohead-info strong')).map(e=>e.textContent).join('/')
+                +' members='+Array.from(cards[0].querySelectorAll('.cc-member span')).map(e=>e.textContent).join('/'));
+              fb[0].click();
+              setTimeout(function(){
+                P('after ALL filter, cards='+d.querySelectorAll('#committee-grid .committee-card').length);
+                // 3. member search
+                const si=d.getElementById('member-search'); si.value='yash';
+                si.dispatchEvent(new w.Event('input',{bubbles:true}));
+                setTimeout(function(){
+                  P('search "yash" results: '+d.getElementById('directory-count').textContent);
+                  // open person modal
+                  d.querySelector('#directory-grid .dir-card').click();
+                  setTimeout(function(){
+                    P('detail modal open: '+(!d.getElementById('detail-modal').hidden)
+                      +' heading='+(d.querySelector('#detail-body h3:nth-of-type(2)')||{textContent:'?'}).textContent);
+                    d.querySelector('#detail-modal [data-close-detail]').click();
+                    // 4. event filter
+                    w.location.hash='#events';
+                    setTimeout(function(){
+                      const ef=Array.from(d.querySelectorAll('#event-filters .filter-btn'));
+                      ef.find(b=>b.dataset.efilter==='Hackathon').click();
+                      setTimeout(function(){
+                        P('hackathon filter: up='+d.querySelectorAll('#events-upcoming .event-card').length
+                          +' past='+d.querySelectorAll('#events-past .event-card').length
+                          +' upEmptyHidden='+d.getElementById('upcoming-empty').hidden);
+                        ef.find(b=>b.dataset.efilter==='Talk').click();
+                        setTimeout(function(){
+                          P('talk filter: up='+d.querySelectorAll('#events-upcoming .event-card').length
+                            +' past='+d.querySelectorAll('#events-past .event-card').length);
+                          d.querySelector('#events-upcoming [data-event-detail]').click();
+                          setTimeout(function(){
+                            P('event detail modal open: '+(!d.getElementById('detail-modal').hidden)
+                              +' title='+d.querySelector('#detail-heading').textContent);
+                            d.querySelector('#detail-modal [data-close-detail]').click();
+                            // 5. contact form
+                            w.location.hash='#connect';
+                            setTimeout(function(){
+                              const cf=d.getElementById('contact-form');
+                              cf.dispatchEvent(new w.Event('submit',{cancelable:true,bubbles:true}));
+                              setTimeout(function(){
+                                P('contact errors: name="'+d.getElementById('err-name').textContent
+                                  +'" email="'+d.getElementById('err-email').textContent
+                                  +'" subject="'+d.getElementById('err-subject').textContent
+                                  +'" message="'+d.getElementById('err-message').textContent+'"');
+                                d.getElementById('cf-name').value='Test User';
+                                d.getElementById('cf-email').value='bad-email';
+                                d.getElementById('cf-subject').value='Hi';
+                                d.getElementById('cf-message').value='short';
+                                cf.dispatchEvent(new w.Event('submit',{cancelable:true,bubbles:true}));
+                                setTimeout(function(){
+                                  P('partial errors: email="'+d.getElementById('err-email').textContent
+                                    +'" subject="'+d.getElementById('err-subject').textContent
+                                    +'" message="'+d.getElementById('err-message').textContent+'"');
+                                  d.getElementById('cf-email').value='user@example.com';
+                                  d.getElementById('cf-subject').value='Collaboration enquiry';
+                                  d.getElementById('cf-message').value='We would like to collaborate with AAVINYA.';
+                                  cf.dispatchEvent(new w.Event('submit',{cancelable:true,bubbles:true}));
+                                  setTimeout(function(){
+                                    const t=Array.from(d.querySelectorAll('#toast-stack .toast strong')).map(e=>e.textContent);
+                                    P('toasts now: '+JSON.stringify(t));
+                                    P('form cleared: name="'+d.getElementById('cf-name').value+'"');
+                                    // 6. routing + nav active
+                                    w.location.hash='#home';
+                                    setTimeout(function(){
+                                      P('home visible: '+!d.getElementById('page-home').hidden
+                                        +' active nav: '+(d.querySelector('.nav-link.active')||{}).dataset.route);
+                                      P('doc scrollWidth='+d.documentElement.scrollWidth+' clientWidth='+d.documentElement.clientWidth);
+                                      P('DONE');
+                                    },700);
+                                  },300);
+                                },300);
+                              },300);
+                            },800);
+                          },500);
+                        },400);
+                      },400);
+                    },800);
+                  },500);
+                },400);
+              },400);
+            },400);
+          },800);
+        },400);
+      },300);
+    },400);
+  },1200);
+});
+</script>
+</body></html>

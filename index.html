@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AAVINYA | AI Forum — Department of Artificial Intelligence, JDCOEM Nagpur</title>
+  <meta name="description"
+    content="AAVINYA is the official Artificial Intelligence forum of the Department of Artificial Intelligence, J D College of Engineering & Management, Nagpur. Session 2026-27. Innovate • Integrate • Inspire.">
+  <meta name="theme-color" content="#0B0F19">
+  <link rel="icon" type="image/jpeg" href="images/AAVINYA_LOGO.jpeg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ======================= INTRO PRELOADER ======================= -->
+  <div class="intro-screen" id="intro-screen" role="status" aria-live="polite" aria-label="Loading AAVINYA">
+    <canvas class="intro-canvas" id="intro-canvas" aria-hidden="true"></canvas>
+    <div class="intro-inner">
+      <div class="intro-logo-ring" aria-hidden="true">
+        <span class="ring ring-1"></span>
+        <span class="ring ring-2"></span>
+        <span class="ring ring-3"></span>
+        <img src="images/AAVINYA_LOGO.jpeg" alt="" class="intro-logo">
+      </div>
+      <h1 class="intro-title" id="intro-title" aria-hidden="true">
+        <span>A</span><span>A</span><span>V</span><span>I</span><span>N</span><span>Y</span><span>A</span>
+      </h1>
+      <p class="intro-motto">Innovate &nbsp;•&nbsp; Integrate &nbsp;•&nbsp; Inspire</p>
+      <div class="intro-bar" aria-hidden="true"><span id="intro-bar-fill"></span></div>
+      <p class="intro-status mono" id="intro-status">initializing neural network…</p>
+    </div>
+    <button class="intro-skip" id="intro-skip" type="button">SKIP INTRO <i
+        class="fa-solid fa-angles-right"></i></button>
+  </div>
+
+  <!-- ======================= PAGE TRANSITION VEIL ======================= -->
+  <div class="route-veil" id="route-veil" aria-hidden="true">
+    <div class="route-veil-core"><span></span><span></span><span></span></div>
+    <p class="route-veil-label mono" id="route-veil-label">loading</p>
+  </div>
+
+  <!-- ======================= BACKGROUND LAYERS ======================= -->
+  <div class="bg-layers" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+    <div class="bg-scan"></div>
+  </div>
+
+  <!-- ======================= SKIP LINK ======================= -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ======================= NAVBAR ======================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-brand" id="nav-brand" aria-label="AAVINYA home">
+        <span class="nav-brand-logo">
+          <img src="images/AAVINYA_LOGO.jpeg" alt="AAVINYA logo">
+        </span>
+        <span class="nav-brand-text">
+          <strong>AAVINYA</strong>
+          <small class="mono">AI FORUM • JDCOEM</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+        <a href="#home" class="nav-link" data-route="home"><i class="fa-solid fa-house"></i><span>HOME</span></a>
+        <a href="#forum" class="nav-link" data-route="forum"><i class="fa-solid fa-sitemap"></i><span>FORUM</span></a>
+        <a href="#events" class="nav-link" data-route="events"><i
+            class="fa-solid fa-calendar-days"></i><span>EVENTS</span></a>
+        <a href="#connect" class="nav-link" data-route="connect"><i
+            class="fa-solid fa-satellite-dish"></i><span>CONNECT</span></a>
+        <button class="btn btn-ghost nav-login-mobile" type="button" data-open-login>
+          <i class="fa-solid fa-right-to-bracket"></i> LOGIN
+        </button>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline nav-login" type="button" data-open-login>
+          <i class="fa-solid fa-right-to-bracket"></i> LOGIN
+        </button>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-progress" id="nav-progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- =========================================================================
+     PAGE : HOME
+     ========================================================================= -->
+    <section class="page" id="page-home" data-page="home" aria-label="Home">
+
+      <!-- HERO -->
+      <div class="hero" id="hero-section">
+        <div class="hero-bg-image" aria-hidden="true"></div>
+        <canvas class="hero-canvas" id="constellation-canvas" aria-hidden="true"></canvas>
+        <div class="hero-vignette" aria-hidden="true"></div>
+
+        <div class="container hero-content">
+          <div class="hero-badge glass reveal">
+            <i class="fa-solid fa-circle-nodes"></i>
+            <span class="mono">DEPARTMENT OF ARTIFICIAL INTELLIGENCE</span>
+          </div>
+
+          <div class="hero-emblem reveal" aria-hidden="true">
+            <img src="images/AAVINYA_LOGO.jpeg" alt="">
+          </div>
+
+          <h1 class="hero-title reveal">AAVINYA</h1>
+          <p class="hero-motto mono reveal">INNOVATE &nbsp;•&nbsp; INTEGRATE &nbsp;•&nbsp; INSPIRE</p>
+
+          <p class="hero-org reveal">
+            J D College of Engineering &amp; Management, Nagpur
+            <span class="hero-session mono">SESSION 2026–27</span>
+          </p>
+
+          <h2 class="hero-tagline reveal">Building the Future with <span class="grad-text">Artificial
+              Intelligence</span></h2>
+
+          <p class="hero-sub reveal">
+            An AI community focused on innovation, research, technical skills,
+            collaboration and real-world problem solving.
+          </p>
+
+          <div class="hero-cta reveal">
+            <a href="#forum" class="btn btn-primary btn-lg" data-ripple>
+              <i class="fa-solid fa-compass"></i> EXPLORE AAVINYA
+            </a>
+            <a href="#events" class="btn btn-outline btn-lg" data-ripple>
+              <i class="fa-solid fa-calendar-days"></i> VIEW EVENTS
+            </a>
+          </div>
+        </div>
+
+        <a href="#home-stats" class="hero-scroll mono" aria-label="Scroll to statistics">
+          <span>SCROLL</span><i class="fa-solid fa-chevron-down"></i>
+        </a>
+      </div>
+
+      <!-- STATS -->
+      <section class="section section-tight" id="home-stats" aria-label="Forum statistics">
+        <div class="container">
+          <div class="stats-grid" id="stats-grid"></div>
+        </div>
+      </section>
+
+      <!-- WHO WE ARE -->
+      <section class="section" id="who-we-are" aria-labelledby="who-title">
+        <div class="container">
+          <div class="who-layout">
+            <div class="who-text reveal">
+              <p class="eyebrow mono"><i class="fa-solid fa-terminal"></i> 01 / IDENTITY</p>
+              <h2 class="section-title" id="who-title">Who We <span class="grad-text">Are</span></h2>
+              <p class="lead" id="who-lead"></p>
+              <p class="muted">
+                Established under the Department of Artificial Intelligence at J D College of
+                Engineering &amp; Management, Nagpur, AAVINYA brings together students across
+                all years into one technical community. The forum is run by an elected Admin
+                Body and twelve specialised committees that organise research tracks, build
+                labs, competitions, workshops and expert talks through the academic session.
+              </p>
+              <ul class="who-points">
+                <li><i class="fa-solid fa-check-double"></i> Student-led, faculty-guided AI forum</li>
+                <li><i class="fa-solid fa-check-double"></i> 12 committees with a clear working hierarchy</li>
+                <li><i class="fa-solid fa-check-double"></i> Research, projects and industry exposure</li>
+                <li><i class="fa-solid fa-check-double"></i> Responsible and ethical use of AI</li>
+              </ul>
+              <a href="#forum" class="btn btn-primary" data-ripple><i class="fa-solid fa-users-viewfinder"></i> MEET THE
+                FORUM</a>
+            </div>
+
+            <div class="who-visual reveal" aria-hidden="true">
+              <div class="ai-orb">
+                <div class="orb-core"><img src="images/AAVINYA_LOGO.jpeg" alt=""></div>
+                <div class="orb-ring orb-ring-1"></div>
+                <div class="orb-ring orb-ring-2"></div>
+                <div class="orb-ring orb-ring-3"></div>
+                <div class="orb-dot orb-dot-1"></div>
+                <div class="orb-dot orb-dot-2"></div>
+                <div class="orb-dot orb-dot-3"></div>
+                <div class="orb-dot orb-dot-4"></div>
+              </div>
+              <div class="orb-tags mono">
+                <span class="glass">machine learning</span>
+                <span class="glass">deep learning</span>
+                <span class="glass">computer vision</span>
+                <span class="glass">NLP</span>
+                <span class="glass">data science</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISION & MISSION -->
+      <section class="section" id="vision-mission" aria-labelledby="vm-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="eyebrow mono"><i class="fa-solid fa-terminal"></i> 02 / DIRECTION</p>
+            <h2 class="section-title" id="vm-title">Vision &amp; <span class="grad-text">Mission</span></h2>
+            <p class="section-sub">The purpose that guides every initiative the forum undertakes.</p>
+          </header>
+          <div class="vm-grid" id="vm-grid"></div>
+        </div>
+      </section>
+
+      <!-- WHAT WE RUN -->
+      <section class="section" id="what-we-run" aria-labelledby="wwr-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="eyebrow mono"><i class="fa-solid fa-terminal"></i> 03 / ACTIVITIES</p>
+            <h2 class="section-title" id="wwr-title">What We <span class="grad-text">Run</span></h2>
+            <p class="section-sub">Six continuous verticals that keep the community learning and building.</p>
+          </header>
+          <div class="wwr-grid" id="wwr-grid"></div>
+        </div>
+      </section>
+
+      <!-- LEADERSHIP STRIP -->
+      <section class="section section-tight" id="leadership-strip" aria-labelledby="lead-title">
+        <div class="container">
+          <div class="lead-banner glass reveal">
+            <div>
+              <p class="eyebrow mono"><i class="fa-solid fa-terminal"></i> 04 / LEADERSHIP</p>
+              <h2 class="section-title sm" id="lead-title">Led by students, <span class="grad-text">built for
+                  students</span></h2>
+              <p class="muted">
+                The AAVINYA 2026–27 Admin Body and twelve committee teams coordinate every
+                event, lab and publication of the forum. View the complete structure on the
+                Forum page.
+              </p>
+            </div>
+            <div class="lead-banner-side">
+              <div class="lead-mini" id="lead-mini"></div>
+              <a href="#forum" class="btn btn-primary" data-ripple><i class="fa-solid fa-sitemap"></i> VIEW ADMIN
+                BODY</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- =========================================================================
+     PAGE : FORUM
+     ========================================================================= -->
+    <section class="page" id="page-forum" data-page="forum" aria-label="Forum" hidden>
+      <div class="page-hero">
+        <div class="container">
+          <p class="eyebrow mono reveal"><i class="fa-solid fa-sitemap"></i> AAVINYA / FORUM 2026–27</p>
+          <h1 class="page-title reveal">The <span class="grad-text">Forum</span></h1>
+          <p class="page-sub reveal">
+            The official Admin Body and committee structure of AAVINYA for Tenure
+            2026–27 Department of Artificial Intelligence, JDCOEM Nagpur.
+          </p>
+          <div class="forum-metrics reveal" id="forum-metrics"></div>
+        </div>
+      </div>
+
+      <!-- ADMIN BODY -->
+      <section class="section" id="admin-body" aria-labelledby="admin-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="eyebrow mono"><i class="fa-solid fa-terminal"></i> SECTION 01</p>
+            <h2 class="section-title" id="admin-title">Admin <span class="grad-text">Body</span></h2>
+            <p class="section-sub">The core office bearers who lead and represent the forum.</p>
+          </header>
+          <div class="admin-president" id="admin-president"></div>
+          <div class="admin-grid" id="admin-grid"></div>
+        </div>
+      </section>
+
+      <!-- COMMITTEE STRUCTURE -->
+      <section class="section" id="committee-structure" aria-labelledby="cs-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="eyebrow mono"><i class="fa-solid fa-terminal"></i> SECTION 02</p>
+            <h2 class="section-title" id="cs-title">Committee <span class="grad-text">Structure</span></h2>
+            <p class="section-sub">Twelve committees, each with a Head, Co-Head(s) and Members.</p>
+          </header>
+
+          <div class="filter-bar reveal" id="committee-filters" role="tablist" aria-label="Committee filter"></div>
+
+          <!-- SECTION 03 : full committee cards incl. members -->
+          <div class="committee-grid" id="committee-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- MEMBER DIRECTORY -->
+      <section class="section" id="committee-members" aria-labelledby="cm-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="eyebrow mono"><i class="fa-solid fa-terminal"></i> SECTION 03</p>
+            <h2 class="section-title" id="cm-title">Committee <span class="grad-text">Members</span></h2>
+            <p class="section-sub">Complete searchable directory of every member of the forum.</p>
+          </header>
+
+          <div class="directory-tools reveal">
+            <label class="search-field">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              <input type="search" id="member-search" placeholder="Search by name, role or committee…"
+                aria-label="Search forum members">
+            </label>
+            <p class="directory-count mono" id="directory-count" aria-live="polite"></p>
+          </div>
+
+          <div class="directory-grid" id="directory-grid"></div>
+          <p class="empty-state" id="directory-empty" hidden>No member matches that search.</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- =========================================================================
+     PAGE : EVENTS
+     ========================================================================= -->
+    <section class="page" id="page-events" data-page="events" aria-label="Events" hidden>
+      <div class="page-hero">
+        <div class="container">
+          <p class="eyebrow mono reveal"><i class="fa-solid fa-calendar-days"></i> AAVINYA / EVENTS</p>
+          <h1 class="page-title reveal">Events &amp; <span class="grad-text">Activities</span></h1>
+          <p class="page-sub reveal">
+            Workshops, hackathons, talks, seminars and competitions organised by the forum
+            through the session.
+          </p>
+        </div>
+      </div>
+
+      <section class="section" id="events-list" aria-label="Event listing">
+        <div class="container">
+          <div class="filter-bar reveal" id="event-filters" role="tablist" aria-label="Event category filter"></div>
+
+          <h2 class="group-title"><i class="fa-solid fa-bolt"></i> Upcoming</h2>
+          <div class="events-grid" id="events-upcoming" aria-live="polite"></div>
+          <p class="empty-state" id="upcoming-empty" hidden>No upcoming events in this category.</p>
+
+          <h2 class="group-title"><i class="fa-solid fa-clock-rotate-left"></i> Past Events</h2>
+          <div class="events-grid" id="events-past"></div>
+          <p class="empty-state" id="past-empty" hidden>No past events in this category.</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- =========================================================================
+     PAGE : CONNECT
+     ========================================================================= -->
+    <section class="page" id="page-connect" data-page="connect" aria-label="Connect" hidden>
+      <div class="page-hero">
+        <div class="container">
+          <p class="eyebrow mono reveal"><i class="fa-solid fa-satellite-dish"></i> AAVINYA / CONNECT</p>
+          <h1 class="page-title reveal">Connect With <span class="grad-text">Us</span></h1>
+          <p class="page-sub reveal">
+            Follow the forum, collaborate with our committees, or send us a message directly.
+          </p>
+        </div>
+      </div>
+
+      <section class="section" id="social-section" aria-labelledby="social-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <h2 class="section-title" id="social-title">Our <span class="grad-text">Channels</span></h2>
+            <p class="section-sub">Every official AAVINYA presence in one place.</p>
+          </header>
+          <div class="social-grid" id="social-grid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="contact-section" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="contact-layout">
+            <div class="contact-info reveal">
+              <h2 class="section-title" id="contact-title">Get in <span class="grad-text">Touch</span></h2>
+              <p class="muted">
+                For collaborations, sponsorship, guest sessions or any query about the forum,
+                reach out using the form or the details below.
+              </p>
+              <ul class="contact-list" id="contact-list"></ul>
+              <div class="note glass">
+                <i class="fa-solid fa-circle-info"></i>
+                <p>
+                  This contact form currently runs entirely in the browser: it validates your
+                  input locally and does <strong>not</strong> transmit the message to any server.
+                  A backend endpoint (<code class="mono">POST /api/contact</code>) is planned.
+                </p>
+              </div>
+            </div>
+
+            <form class="contact-form glass reveal" id="contact-form" novalidate>
+              <h3 class="form-title">Send a Message</h3>
+
+              <div class="field">
+                <label for="cf-name">Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your full name"
+                  aria-describedby="err-name" required>
+                <p class="field-error" id="err-name" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="cf-email">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="you@example.com"
+                  aria-describedby="err-email" required>
+                <p class="field-error" id="err-email" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="cf-subject">Subject <span aria-hidden="true">*</span></label>
+                <input type="text" id="cf-subject" name="subject" placeholder="What is this about?"
+                  aria-describedby="err-subject" required>
+                <p class="field-error" id="err-subject" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="cf-message">Message <span aria-hidden="true">*</span></label>
+                <textarea id="cf-message" name="message" rows="5" placeholder="Write your message…"
+                  aria-describedby="err-message" required></textarea>
+                <p class="field-error" id="err-message" role="alert"></p>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg btn-block" data-ripple>
+                <i class="fa-solid fa-paper-plane"></i> SEND MESSAGE
+              </button>
+              <p class="form-note mono">frontend validation only — no data leaves this page</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer" id="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/AAVINYA_LOGO.jpeg" alt="AAVINYA logo">
+          <div>
+            <strong>AAVINYA</strong>
+            <small class="mono">INNOVATE • INTEGRATE • INSPIRE</small>
+          </div>
+        </div>
+        <p class="muted">
+          Official Artificial Intelligence forum of the Department of Artificial
+          Intelligence, J D College of Engineering &amp; Management, Nagpur.
+        </p>
+        <div class="footer-social" id="footer-social"></div>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h3>Explore</h3>
+        <a href="#home">Home</a>
+        <a href="#forum">Forum</a>
+        <a href="#events">Events</a>
+        <a href="#connect">Connect</a>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Forum</h3>
+        <a href="#admin-body" data-route-link="forum">Admin Body</a>
+        <a href="#committee-structure" data-route-link="forum">Committees</a>
+        <a href="#committee-members" data-route-link="forum">Members</a>
+        <a href="#vision-mission" data-route-link="home">Vision &amp; Mission</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Department</h3>
+        <p class="mono small">Department of Artificial Intelligence</p>
+        <p class="mono small">J D College of Engineering &amp; Management</p>
+        <p class="mono small">Nagpur, Maharashtra</p>
+        <p class="mono small">Session 2026–27</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="mono">© <span id="footer-year">2026</span> AAVINYA • Department of Artificial Intelligence, JDCOEM
+          Nagpur</p>
+        <p class="mono">Designed &amp; maintained by the Technical &amp; Digital Committees</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================= LOGIN MODAL ======================= -->
+  <div class="modal" id="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-heading" hidden>
+    <div class="modal-backdrop" data-close-login></div>
+    <div class="modal-card glass" role="document">
+      <button class="modal-close" type="button" aria-label="Close login dialog" data-close-login>
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-head">
+        <span class="modal-logo"><img src="images/AAVINYA_LOGO.jpeg" alt=""></span>
+        <h2 id="login-heading">Portal Login</h2>
+        <p class="muted small">AAVINYA internal portal • session 2026–27</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Login role">
+        <button class="tab active" type="button" role="tab" aria-selected="true" data-tab="admin">
+          <i class="fa-solid fa-user-shield"></i> ADMIN
+        </button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-tab="core">
+          <i class="fa-solid fa-user-gear"></i> CORE MEMBER
+        </button>
+      </div>
+
+      <form id="login-form" novalidate>
+        <input type="hidden" id="login-role" value="admin">
+
+        <div class="field">
+          <label for="lg-email">Email</label>
+          <input type="email" id="lg-email" name="email" autocomplete="username" placeholder="name@jdcoem.ac.in"
+            aria-describedby="err-lg-email" required>
+          <p class="field-error" id="err-lg-email" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="lg-pass">Password</label>
+          <div class="pass-wrap">
+            <input type="password" id="lg-pass" name="password" autocomplete="current-password" placeholder="••••••••"
+              aria-describedby="err-lg-pass" required>
+            <button type="button" class="pass-toggle" id="pass-toggle" aria-label="Show password"><i
+                class="fa-solid fa-eye"></i></button>
+          </div>
+          <p class="field-error" id="err-lg-pass" role="alert"></p>
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary btn-block" data-ripple><i
+              class="fa-solid fa-right-to-bracket"></i> LOGIN</button>
+          <button type="button" class="btn btn-ghost btn-block" data-close-login>CLOSE</button>
+        </div>
+      </form>
+
+      <p class="modal-note">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span>
+          <strong>Frontend demo only.</strong> This form performs no authentication and
+          grants no access — any credentials typed here stay in the browser. Real sign-in
+          requires a backend (<code class="mono">POST /api/auth/login</code>), which is not
+          implemented yet.
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ======================= EVENT GALLERY MODAL ======================= -->
+  <div class="modal" id="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="gallery-heading" hidden>
+    <div class="modal-backdrop" data-close-gallery></div>
+    <div class="modal-card glass modal-card-wide gallery-modal-card" role="document">
+      <button class="modal-close" type="button" aria-label="Close gallery dialog" data-close-gallery>
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="gallery-modal-head">
+        <div>
+          <p class="eyebrow mono"><i class="fa-solid fa-photo-film"></i> EVENT MEDIA GALLERY</p>
+          <h2 id="gallery-heading">Event Gallery</h2>
+          <p class="muted small" id="gallery-sub">Photos &amp; Videos from this event</p>
+        </div>
+        <button class="btn btn-primary btn-sm" id="btn-open-upload" type="button">
+          <i class="fa-solid fa-cloud-arrow-up"></i> UPLOAD MEDIA
+        </button>
+      </div>
+
+      <!-- Upload Drawer -->
+      <form class="gallery-upload-form glass" id="gallery-upload-form" hidden>
+        <h4><i class="fa-solid fa-cloud-arrow-up"></i> Upload Image / Video to Event</h4>
+        <input type="hidden" id="upload-event-id">
+        <div class="upload-fields">
+          <div class="field">
+            <label for="upload-type">Media Type</label>
+            <select id="upload-type" name="type">
+              <option value="image">Photo / Image</option>
+              <option value="video">Video (YouTube/Direct Link)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="upload-url">Media URL / File Link <span aria-hidden="true">*</span></label>
+            <input type="url" id="upload-url" placeholder="https://example.com/photo.jpg or video embed URL" required>
+          </div>
+          <div class="field">
+            <label for="upload-title">Title</label>
+            <input type="text" id="upload-title" placeholder="e.g. Prize Distribution Ceremony">
+          </div>
+          <div class="field">
+            <label for="upload-caption">Caption</label>
+            <input type="text" id="upload-caption" placeholder="Short description of the moment">
+          </div>
+        </div>
+        <div class="upload-actions">
+          <button type="submit" class="btn btn-primary btn-sm"><i class="fa-solid fa-check"></i> SUBMIT MEDIA</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="btn-cancel-upload">CANCEL</button>
+        </div>
+      </form>
+
+      <!-- Filter tabs -->
+      <div class="tabs" id="gallery-tabs" role="tablist">
+        <button class="tab active" type="button" data-gtab="all"><i class="fa-solid fa-border-all"></i> ALL
+          MEDIA</button>
+        <button class="tab" type="button" data-gtab="image"><i class="fa-regular fa-image"></i> PHOTOS</button>
+        <button class="tab" type="button" data-gtab="video"><i class="fa-solid fa-video"></i> VIDEOS</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="gallery-grid"></div>
+      <p class="empty-state" id="gallery-empty" hidden>No media uploaded for this event yet. Be the first to upload
+        photos or videos!</p>
+
+      <!-- Lightbox viewer -->
+      <div class="gallery-lightbox" id="gallery-lightbox" hidden>
+        <button class="lightbox-close" type="button" id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="lightbox-content" id="lightbox-content"></div>
+        <p class="lightbox-caption mono" id="lightbox-caption"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= MEMBER DETAIL / EVENT MODAL ======================= -->
+  <div class="modal" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-heading" hidden>
+    <div class="modal-backdrop" data-close-detail></div>
+    <div class="modal-card glass modal-card-wide" role="document">
+      <button class="modal-close" type="button" aria-label="Close dialog" data-close-detail>
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="detail-body"></div>
+    </div>
+  </div>
+
+  <!-- ======================= TOAST STACK ======================= -->
+  <div class="toast-stack" id="toast-stack" role="status" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- ======================= BACK TO TOP ======================= -->
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top" hidden>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ======================= SCRIPTS ======================= -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
